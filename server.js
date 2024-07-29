@@ -8,6 +8,7 @@ require("./config/dbConnect");
 const app = express();
 const cors = require("cors");
 const globalErrorHandler = require("./middlewares/globalErrorHandler");
+
 const PORT = process.env.PORT || 8000;
 //middleware
 app.use(express.json());

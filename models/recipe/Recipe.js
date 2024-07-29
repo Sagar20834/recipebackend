@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const instructionStepSchema = new mongoose.Schema();
 
 const recipeSchema = new mongoose.Schema(
   {
@@ -6,7 +7,7 @@ const recipeSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    image: {
+    recipeimage: {
       type: String,
       required: true,
     },
@@ -21,10 +22,19 @@ const recipeSchema = new mongoose.Schema(
       type: [String],
       required: true,
     },
-    instructions: {
-      type: [String],
-      required: true,
-    },
+    instructions: [
+      {
+        instructionstitle: {
+          type: String,
+          // required: true,
+        },
+        instructionsimage: {
+          type: String,
+          // required: false,
+        },
+      },
+    ],
+
     servings: {
       type: Number,
       required: true,
